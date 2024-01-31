@@ -16,6 +16,7 @@ namespace Alito.Classes.Helpers
         public JSONHelper()
         {
             _json = new DBJSON();
+            Instanse = this;
         }
 
         public void SaveJson()
@@ -74,6 +75,23 @@ namespace Alito.Classes.Helpers
                         foreach (var test in sub.Tasks)
                             if (test.id == selTest.Id)
                                 return test;
+            return null;
+        }
+
+        public Entities.DBSubject FindSubject(string name, bool isOGE)
+        {
+            if (isOGE)
+            {
+                foreach (var sub in _json.Exams.OGE.Subjects)
+                    if (sub.Name == name)
+                        return sub;
+            }
+            else
+            {
+                foreach (var sub in _json.Exams.EGE.Subjects)
+                    if (sub.Name == name)
+                        return sub;
+            }
             return null;
         }
     }

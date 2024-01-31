@@ -1,6 +1,7 @@
 ﻿using Alito.Classes.Entities.User;
 using Alito.Classes.Helpers;
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -72,23 +73,40 @@ namespace Alito.Classes
                     case "Магазин":
                         break;
                     case "Питомец":
-                        var pet = JSONHelper.Instanse.FindUser(message.Chat.Id).Pet;
-                        await client.SendTextMessageAsync(message.Chat.Id,
+                        var pet = JSONHelper.Instanse.FindUser(result.From.Id).Pet;
+                        await client.SendTextMessageAsync(result.From.Id,
                             $"Информация о питомце:\nИмя: {pet.Name}\nСчастье: {pet.Happy}\nУровень: {pet.Level}\nНеобходимо счастьья для повышения: {pet.NeedHappyToLVL}", cancellationToken: token);
                         break;
                     case "Статистика":
-                        var stats = JSONHelper.Instanse.FindUser(message.Chat.Id).Statistic;
+                        var stats = JSONHelper.Instanse.FindUser(result.From.Id).Statistic;
                         break;
                     case "ОГЭ":
-                        var user = JSONHelper.Instanse.FindUser(message.Chat.Id);
+                        var user = JSONHelper.Instanse.FindUser(result.From.Id);
                         user._selectedTest = new SelectedTest(0, 0, true);
+                        List<InlineKeyboardButton> buttons = new List<InlineKeyboardButton>();
+                        foreach (var subject in JSONHelper.Instanse._json.Exams.OGE.Subjects)
+                            buttons.Add(new InlineKeyboardButton(subject.Name));
+                        var inlineKeyboard2 = new InlineKeyboardMarkup(new[] {  buttons  });
+
+                        await client.SendTextMessageAsync(result.From.Id, "Выбери задания", replyMarkup: inlineKeyboard2,
+                            cancellationToken: token);
                         break;
                     case "ЕГЭ":
                         var user2 = JSONHelper.Instanse.FindUser(message.Chat.Id);
                         user2._selectedTest = new SelectedTest(0, 0, false);
+                        List<InlineKeyboardButton> buttons2 = new List<InlineKeyboardButton>();
+                        foreach (var subject in JSONHelper.Instanse._json.Exams.EGE.Subjects)
+                            buttons2.Add(new InlineKeyboardButton(subject.Name));
+                        var inlineKeyboard3 = new InlineKeyboardMarkup(new[] { buttons2 });
+
+                        await client.SendTextMessageAsync(result.From.Id, "Выбери задания", replyMarkup: inlineKeyboard3,
+                            cancellationToken: token);
                         break;
                     default:
-
+                        var sub = JSONHelper.Instanse.FindSubject(result.Data, 
+                            JSONHelper.Instanse.FindUser(result.From.Id)._selectedTest.isOGE);
+                        if (sub != null)
+                            return;
                         break;
                 }
         }
