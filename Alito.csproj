@@ -71,6 +71,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\BotLogic.cs" />
+    <Compile Include="Classes\Entities\DBJSON.cs" />
+    <Compile Include="Classes\Entities\User\ClassUser.cs" />
+    <Compile Include="Classes\Entities\User\SelectedTest.cs" />
+    <Compile Include="Classes\Helpers\JSONHelper.cs" />
+    <Compile Include="Classes\JSONController.cs" />
     <Compile Include="UserControl\Student.xaml.cs">
       <DependentUpon>Student.xaml</DependentUpon>
     </Compile>
@@ -100,7 +106,6 @@
     <Compile Include="Classes\Entities\Tasks\CompleteTask.cs" />
     <Compile Include="Classes\Entities\Tasks\Task.cs" />
     <Compile Include="Classes\Entities\Tasks\TaskVariable.cs" />
-    <Compile Include="Classes\Entities\User\User.cs" />
     <Compile Include="Classes\Entities\User\UserStatistic.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
