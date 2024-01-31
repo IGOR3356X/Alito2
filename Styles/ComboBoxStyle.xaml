@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="ComboBox" x:Key="ComboBoxEZ">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="#373334"/>
+            <Setter Property="FontWeight" Value="Light"/>
+            <Setter Property="Background" Value="#F3ECE4"/>
+
+        </Style.Setters>
+    </Style>
+
+</ResourceDictionary>

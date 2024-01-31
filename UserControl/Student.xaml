@@ -1,0 +1,191 @@
+﻿<UserControl x:Class="Alito.UserControl.Student"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Alito.UserControl"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="740">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <Label Margin="0,20,0,0"
+                   Content="Имя"
+                   Foreground="White"
+                   FontSize="35"></Label>
+            <TextBox Style="{StaticResource TxtBox}"
+                     FontSize="25"/>
+            <Label Margin="0,20,0,0"
+                   Content="Статистика ОГЭ"
+                   Foreground="White"
+                   FontSize="35"></Label>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Row="0"
+                            Grid.Column="0">
+                    <TextBox Style="{StaticResource TxtBox}"
+                     FontSize="15"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Height="30"
+                        Text="Количество заданий "/>
+                    <TextBox Style="{StaticResource TxtBox}"
+                     FontSize="15"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Height="30"
+                        Text="Правильные задания"/>
+                    <TextBox Style="{StaticResource TxtBox}"
+                     FontSize="15"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Height="30"
+                        Text="Неправильные задания "/>
+                    <TextBox Style="{StaticResource TxtBox}"
+                     FontSize="13"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Height="30"
+                        Text="Процент правильных заданий"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1"
+                            Grid.Column="1">
+                    <TextBox Style="{StaticResource TxtBox}"
+                     FontSize="15"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Height="30"
+                        />
+                    <TextBox Style="{StaticResource TxtBox}"
+                     FontSize="15"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Height="30"
+                        />
+                    <TextBox Style="{StaticResource TxtBox}"
+                     FontSize="15"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Height="30"
+                      />
+                    <TextBox Style="{StaticResource TxtBox}"
+                     FontSize="15"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Height="30"
+                       />
+                </StackPanel>
+            </Grid>
+            <Label Margin="0,20,0,0"
+                   Content="Статистика ЕГЭ"
+                   Foreground="White"
+                   FontSize="35"></Label>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Row="0"
+                            Grid.Column="0">
+                    <TextBox Style="{StaticResource TxtBox}"
+                     FontSize="15"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Height="30"
+                        Text="Количество заданий "/>
+                    <TextBox Style="{StaticResource TxtBox}"
+                     FontSize="15"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Height="30"
+                        Text="Правильные задания"/>
+                    <TextBox Style="{StaticResource TxtBox}"
+                     FontSize="15"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Height="30"
+                        Text="Неправильные задания "/>
+                    <TextBox Style="{StaticResource TxtBox}"
+                     FontSize="13"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Height="30"
+                        Text="Процент правильных заданий"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1"
+                            Grid.Column="1">
+                    <TextBox Style="{StaticResource TxtBox}"
+                     FontSize="15"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Height="30"
+                        />
+                    <TextBox Style="{StaticResource TxtBox}"
+                     FontSize="15"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Height="30"
+                        />
+                    <TextBox Style="{StaticResource TxtBox}"
+                     FontSize="15"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Height="30"
+                      />
+                    <TextBox Style="{StaticResource TxtBox}"
+                     FontSize="15"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Height="30"
+                       />
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <StackPanel Orientation="Horizontal">
+                <Label Margin="0,20,0,0"
+                  Content="Питомец"
+                  Foreground="White"
+                  FontSize="35"></Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBox Style="{StaticResource TxtBox}"
+                     FontSize="15"
+                         Width="200"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Height="30"
+                       />
+                <TextBox Style="{StaticResource TxtBox}"
+                     FontSize="15"
+                         Margin="70,0,0,0"
+                         Width="100"
+                         Text="Ур."
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Height="30"
+                       />
+            </StackPanel>
+            <Image Source="/images/shlep.jpeg" Height="250"></Image>
+            <Label Margin="0,10,0,0"
+                  Content="Характеристики"
+                  Foreground="White"
+                  FontSize="35"></Label>
+            <TextBox Style="{StaticResource TxtBox}"
+                     FontSize="15"
+                         Margin="0,0,150,0"
+                         Width="200"
+                         Text="Счастье"
+                             HorizontalContentAlignment="Left"
+                             VerticalContentAlignment="Center"
+                             Height="30"
+                       />
+        </StackPanel>
+    </Grid>
+</UserControl>
